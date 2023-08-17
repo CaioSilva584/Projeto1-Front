@@ -1,31 +1,14 @@
 <script setup>
+import HeaderFormat from './components/HeaderFormat.vue'
+import Cards from './components/Cards.vue'
+
 console.log("Lembrar de perguntar ao Lucas pra q server o *,*::before,*::after")
 </script>
 
 
 <template>
-  <section class="header-wrapper">
-    <div>
-      <h1>Cursos Online</h1>
-    </div>
-    <div>
-      <h5>Cursos de diversas áreas para você!</h5>
-    </div>
-  </section>
-  <section>
-    <div class="cards-wrapper">
-      Curso de natação
-    </div>
-    <div class="cards-wrapper">
-      Curso de primeiros Socorros
-    </div>
-    <div class="cards-wrapper">
-      Curso de combate ao incêndio
-    </div>
-    <div class="cards-wrapper">
-      Curso de combate ao Thanos
-    </div>
-  </section>
+  <HeaderFormat/>
+  <Cards/>
 </template>
 
 
@@ -35,17 +18,12 @@ console.log("Lembrar de perguntar ao Lucas pra q server o *,*::before,*::after")
   background-color: rgb(50, 77, 126);
   font-size: 28px;
   padding: 1rem;
+  margin: 0 auto;
 }
 
-.cards-wrapper {
-  display: inline-block;
-  box-shadow: 4px 4px 10px black;
-  border-radius: 10px 10px;
-  width: 30em;
-  padding: 4em;
-  margin: 2em;
-  background-color: rgb(15, 14, 76);
-  text-align: center;
+.imagens {
+  padding: 0;
+  margin: 0;
 }
 
 </style>
