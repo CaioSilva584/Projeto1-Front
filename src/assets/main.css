@@ -1,13 +1,5 @@
 @import './base.css';
 
-.cards-wrapper {
-    display: inline-block;
-    box-shadow: 4px 4px 10px black;
-    border-radius: 10px 10px;
-    width: 30em;
-    padding: 4em;
-    margin: 2em;
-    margin-bottom: 0;
-    background-color: rgb(15, 14, 76);
-    text-align: center;
-  }
+b{
+  font-weight: bold;
+}

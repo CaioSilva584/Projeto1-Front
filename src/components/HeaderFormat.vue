@@ -14,7 +14,8 @@
     box-shadow: 4px 4px 10px black;
     background-color: rgb(50, 77, 126);
     font-size: 28px;
-    padding: 1rem;
+    padding: 1em;
     margin: 0 auto;
 }
+
 </style>

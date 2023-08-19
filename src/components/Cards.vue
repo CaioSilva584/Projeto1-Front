@@ -1,25 +1,73 @@
 <script setup>
+import { ref } from 'vue';
+import natacao from "../assets/img/natacao.jpg"
+import primeirosSocorros from "../assets/img/primeiros-socorros.jpg"
+import combateIncendio from "../assets/img/combate-incendio.png"
+import thanos from "../assets/img/thanos-filme.jpg"
 
+const cursos = ref([
+    {
+        imagem: natacao,
+        descricao: "",
+        nome: "Curso de natação"
+    },
+    {
+        imagem: primeirosSocorros,
+        descricao: "",
+        nome: "Curso de primeiros Socorros"
+    },
+    {
+        imagem: combateIncendio,
+        descricao: "",
+        nome: "Curso de combate ao incênido"
+    },
+    {
+        imagem: thanos,
+        descricao: "",
+        nome: "Curso de combate ao Thanos"
+    },
+])
 
 </script>
 
 <template>
     <section>
-        <div class="cards-wrapper">
-            <nav>
-                <img class="imagens" src="natacao.jpg" width="30" height="30">
-            </nav>
-            Curso de natação
-        </div>
-        <div class="cards-wrapper">
-            Curso de primeiros Socorros
-        </div>
-        <div class="cards-wrapper">
-            Curso de combate ao incêndio
-        </div>
-        <div class="cards-wrapper">
-            Curso de combate ao Thanos
+        <div class="cards-wrapper" v-for="curso of cursos">
+            <img :src="curso.imagem" :alt="curso.descricao">
+            <div class="card-description">
+                <b>{{ curso.nome }}</b>
+                <RouterLink to="google.com">
+                    Visualizar
+                </RouterLink>
+            </div>
         </div>
     </section>
 </template>
 
+<style scoped>
+.cards-wrapper {
+    display: inline-block;
+    box-shadow: 4px 4px 10px black;
+    border-radius: 10px 10px;
+    width: 30em;
+    margin: 2em;
+    margin-bottom: 0;
+    background-color: rgb(15, 14, 76);
+    text-align: center;
+    overflow: clip;
+}
+
+.cards-wrapper>img {
+    width: 100%;
+    height: 300px;
+}
+
+.card-description{
+    padding: 1em;
+}
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+}
+</style>
