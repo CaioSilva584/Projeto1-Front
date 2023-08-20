@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from 'vue';
-import natacao from "../assets/img/natacao.jpg"
-import primeirosSocorros from "../assets/img/primeiros-socorros.jpg"
-import combateIncendio from "../assets/img/combate-incendio.png"
-import thanos from "../assets/img/thanos-filme.jpg"
+import natacao from "../../assets/img/natacao.jpg"
+import primeirosSocorros from "../../assets/img/primeiros-socorros.jpg"
+import combateIncendio from "../../assets/img/combate-incendio.png"
+import thanos from "../../assets/img/thanos-filme.jpg"
 
 const cursos = ref([
     {
@@ -36,8 +36,10 @@ const cursos = ref([
             <img :src="curso.imagem" :alt="curso.descricao">
             <div class="card-description">
                 <b>{{ curso.nome }}</b>
-                <RouterLink to="google.com">
-                    Visualizar
+                <RouterLink to="/cursos">
+                    <button>
+                        Visualizar
+                    </button>
                 </RouterLink>
             </div>
         </div>
@@ -62,12 +64,20 @@ const cursos = ref([
     height: 300px;
 }
 
-.card-description{
+.card-description {
     padding: 1em;
 }
 
-section{
+section {
     display: flex;
     flex-wrap: wrap;
+}
+
+button {
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+    align-items: end;
+    border-color: blueviolet;
 }
 </style>

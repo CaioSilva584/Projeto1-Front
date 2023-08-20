@@ -1,6 +1,6 @@
 <script setup>
-import HeaderFormat from '../components/HeaderFormat.vue'
-import Cards from '../components/Cards.vue'
+import HeaderFormat from '../components/home/HeaderFormat.vue'
+import Cards from '../components/home/Cards.vue'
 
 console.log("Lembrar de perguntar ao Lucas pra q server o *,*::before,*::after")
 </script>
