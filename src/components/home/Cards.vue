@@ -1,48 +1,29 @@
 <script setup>
-import { ref } from 'vue';
-import natacao from "../../assets/img/natacao.jpg"
-import primeirosSocorros from "../../assets/img/primeiros-socorros.jpg"
-import combateIncendio from "../../assets/img/combate-incendio.png"
-import thanos from "../../assets/img/thanos-filme.jpg"
+import { ref, onMounted } from 'vue';
+import cursoService from "../../services/cursoService"
 
-const cursos = ref([
-    {
-        imagem: natacao,
-        descricao: "",
-        nome: "Curso de natação"
-    },
-    {
-        imagem: primeirosSocorros,
-        descricao: "",
-        nome: "Curso de primeiros Socorros"
-    },
-    {
-        imagem: combateIncendio,
-        descricao: "",
-        nome: "Curso de combate ao incênido"
-    },
-    {
-        imagem: thanos,
-        descricao: "",
-        nome: "Curso de combate ao Thanos"
-    },
-])
+const cursos = ref([])
+
+function load(){
+    cursos.value = cursoService.getCursos()
+}
+
+onMounted(load)
 
 </script>
 
 <template>
     <section>
-        <div class="cards-wrapper" v-for="curso of cursos">
-            <img :src="curso.imagem" :alt="curso.descricao">
-            <div class="card-description">
-                <b>{{ curso.nome }}</b>
-                <RouterLink to="/cursos">
-                    <button>
-                        Visualizar
-                    </button>
-                </RouterLink>
+        <RouterLink custom v-slot="{ navigate }" :to="`/cursos/${curso.id}`" v-for="curso of cursos">
+            <div class="cards-wrapper" @click="navigate">
+                <img :src="curso.imagem" :alt="curso.descricao">
+                <div class="card-description">
+                    <b>{{ curso.nome }}</b>
+
+                </div>
             </div>
-        </div>
+        </RouterLink>
+
     </section>
 </template>
 
@@ -57,6 +38,7 @@ const cursos = ref([
     background-color: rgb(15, 14, 76);
     text-align: center;
     overflow: clip;
+    cursor: pointer;
 }
 
 .cards-wrapper>img {
