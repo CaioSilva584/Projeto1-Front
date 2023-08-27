@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from "../views/Home.vue"
-import ViewCourse from "../views/ViewCourseNatacao.vue"
+import ViewCourse from "../views/ViewCourse.vue"
 import AddResourse from "../views/AddResourses.vue"
 
 const router = createRouter({
@@ -18,7 +18,7 @@ const router = createRouter({
       component: ViewCourse,
     },
     {
-      path: '/recursos',
+      path: '/cursos/:cursoId/:addResourse',
       name: 'Recursos',
       component: AddResourse,
     },

@@ -46,6 +46,10 @@ onMounted(load)
     height: 300px;
 }
 
+.cards-wrapper:hover{
+    background-color: rgb(19, 18, 94);
+}
+
 .card-description {
     padding: 1em;
 }
@@ -53,13 +57,5 @@ onMounted(load)
 section {
     display: flex;
     flex-wrap: wrap;
-}
-
-button {
-    border-width: 0;
-    margin: 0;
-    padding: 0;
-    align-items: end;
-    border-color: blueviolet;
 }
 </style>
